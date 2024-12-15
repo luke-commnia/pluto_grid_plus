@@ -213,7 +213,7 @@ mixin PopupCellState<T extends PopupCell> on State<T>
     return TextField(
       focusNode: textFocus,
       controller: textController,
-      readOnly: true,
+      readOnly: false,
       textInputAction: TextInputAction.none,
       onTap: openPopup,
       style: widget.stateManager.configuration.style.cellTextStyle,
