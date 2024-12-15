@@ -25,6 +25,8 @@ abstract class GridPopupProps {
   List<PlutoRow> get popupRows;
 
   IconData? get icon;
+
+  bool get allowEditing;
 }
 
 mixin PopupCellState<T extends PopupCell> on State<T>
@@ -213,9 +215,9 @@ mixin PopupCellState<T extends PopupCell> on State<T>
     return TextField(
       focusNode: textFocus,
       controller: textController,
-      readOnly: false,
+      readOnly: !allowEditing,
       textInputAction: TextInputAction.none,
-      onTap: openPopup,
+      onTap: !allowEditing ? openPopup : null,
       style: widget.stateManager.configuration.style.cellTextStyle,
       decoration: InputDecoration(
         border: const OutlineInputBorder(

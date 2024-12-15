@@ -39,6 +39,9 @@ class PlutoTimeCellState extends State<PlutoTimeCell>
   List<PlutoRow> popupRows = [];
 
   @override
+  bool get allowEditing => false;
+
+  @override
   IconData? get icon => widget.column.type.time.popupIcon;
 
   String get cellValue =>

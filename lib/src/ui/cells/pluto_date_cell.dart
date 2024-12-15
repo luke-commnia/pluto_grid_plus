@@ -42,6 +42,9 @@ class PlutoDateCellState extends State<PlutoDateCell>
   IconData? get icon => widget.column.type.date.popupIcon;
 
   @override
+  bool get allowEditing => false;
+
+  @override
   void openPopup() async {
     if (widget.column.checkReadOnly(widget.row, widget.cell)) {
       return;

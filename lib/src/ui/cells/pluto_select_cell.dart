@@ -39,6 +39,9 @@ class PlutoSelectCellState extends State<PlutoSelectCell>
   @override
   IconData? get icon => widget.column.type.select.popupIcon;
 
+  @override
+  bool get allowEditing => widget.column.type.select.allowEditing;
+
   late bool enableColumnFilter;
 
   @override
